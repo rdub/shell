@@ -1,0 +1,6 @@
+#aliases
+alias ls='ls -pG $*'
+alias top="/usr/bin/top -o cpu"
+alias shit="sudo shutdown -r now"
+alias vim="nfgvim"
+
