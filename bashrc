@@ -1,10 +1,11 @@
+. ~/.shell/git_utils
 
 function parse_git_branch {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
 export EDITOR="nfgvim"
-export PATH="${PATH}:/usr/local/git/bin"
+export PATH="${HOME}/bin:${PATH}:/usr/local/git/bin"
 
 # e environment
 if [ -d ~/.e ]; then
@@ -15,6 +16,8 @@ fi
 export GIT_EDITOR="nfgvim"
 export CVS_RSH=ssh
 export SVN_EDITOR=/usr/bin/vim
+
+git_setup
 
 #aliases
 alias ls='ls -pG $*'

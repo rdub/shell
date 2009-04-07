@@ -1,0 +1,34 @@
+
+function git_setup {
+# colors
+	git config --global color.diff auto
+	git config --global color.status auto
+	git config --global color.branch auto
+	git config --global color.interactive auto
+
+# shortcuts
+	git config --global alias.st status
+	git config --global alias.ci commit
+	git config --global alias.co checkout
+	git config --global alias.br branch
+
+# if you ever have conflicts you can type git-mergetool
+# to use Apple opendiff (FileMerge) for resolving conflicts
+	git config --global merge.tool opendiff
+# Whenever we merge provide a summary of commits
+	git config --global merge.summary true
+
+# globally ignore some cruft files
+	git config --global core.excludesfile ~/.shell/gitignore
+	echo "*~" > ~/.shell/gitignore
+	echo ".DS_Store" >> ~/.shell/gitignore
+	echo ".rej" >> ~/.shell/gitignore
+
+# setup nice fonts on gitk
+	cat > ~/.gitk <<\EOF
+	set mainfont {Monaco 10}
+	set textfont {Monaco 10}
+	set uifont {Monaco 10}
+EOF
+
+}
