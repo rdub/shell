@@ -1,4 +1,5 @@
-" Vimrc - Justin Rocha <xenith@xenith.org>
+" Vimrc - 
+" Originally by Justin Rocha <xenith@xenith.org>
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -12,11 +13,9 @@ set smartindent
 set term=xterm-color    " Makes mouse work in Eterm
 set ttyfast
 set background=light
-"set expandtab           " Replace all TABs with spaces
 set tabstop=4           " TAB == 4 spaces
 set shiftwidth=4        " TAB == 4 spaces
 set softtabstop=4       " TAB == 4 spaces
-"set showbreak=         " Gets annoying after a while :/
 set showmatch		    " show matching braces
 set showmode
 set showcmd             " show current uncompleted command
@@ -33,8 +32,6 @@ set autowrite
 set report=0		    " Report all changed lines
 set history=50		    " keep 50 lines of command line history
 set pastetoggle=<F12>
-"set noerrorbells
-"set visualbell         " Holy CRAP that was annoying. More so than the beeps.
 
 
 " *********
@@ -234,7 +231,7 @@ if has("autocmd")
 		\ | r !chmod +x % > /dev/null
 
 	au FileType	python
-		\   set tabstop=4 shiftwidth=4
+		\   set tabstop=2 shiftwidth=2
 		\ | set expandtab
 
 	" Shell
