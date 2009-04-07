@@ -1,5 +1,5 @@
 #!/bin/sh
 
-cp bash_profile ~/.bash_profile
-cp vimrc ~/.vimrc
-cp bashrc ~/.bashrc
+cp -i bash_profile ~/.bash_profile
+cp -i vimrc ~/.vimrc
+cp -i bashrc ~/.bashrc
