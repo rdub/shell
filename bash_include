@@ -17,3 +17,6 @@ fi
 
 # prompt
 . ~/.shell/prompt
+
+# utility functions
+. ~/.shell/utilities
