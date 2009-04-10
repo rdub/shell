@@ -17,3 +17,6 @@ fi
 
 # prompt
 . ~/.shell/prompt
+
+# history control
+. ~/.shell/history
