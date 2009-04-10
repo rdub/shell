@@ -274,3 +274,6 @@ set foldmethod=manual   "enable code folding
 "colorscheme evening
 
 map <C-M> mvggVG:s/<C-V><CR>//g<CR>`v
+
+" Source cscope integration
+source ~/.shell/cscope_maps.vim
