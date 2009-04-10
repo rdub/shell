@@ -2,5 +2,5 @@
 alias ls='ls -pG $*'
 alias top="/usr/bin/top -o cpu"
 alias shit="sudo shutdown -r now"
-alias vim="nfgvim"
-
+# Shows the 10 largest files/sub-directories in the current
+alias ducks="du -cks * | sort -nr | head -n 10"
