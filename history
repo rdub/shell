@@ -1,0 +1,7 @@
+# History control
+# Make bash's history not-suck.
+# Using this, you can type a partial command, and press up/down to search matching history
+
+export HISTCONTROL=erasedups
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'

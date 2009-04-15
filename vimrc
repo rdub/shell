@@ -1,5 +1,6 @@
 " Vimrc - 
 " Originally by Justin Rocha <xenith@xenith.org>
+" Adapted and amalgamated by Ryan Du Bois (ryan@ryandubois.net)
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -274,3 +275,19 @@ set foldmethod=manual   "enable code folding
 "colorscheme evening
 
 map <C-M> mvggVG:s/<C-V><CR>//g<CR>`v
+
+" Source cscope integration
+source ~/.shell/cscope_maps.vim
+
+" Vim + e (env manager) integration
+" Function by Robert Curtis 
+" robert.caston@gmail.com
+if !exists("*ReadEEnv")
+	function ReadEEnv()
+		let opts = $vimoptions
+		let optlist = split(opts, ';')
+		for opt in optlist
+			exe 'set ' . opt
+		endfor
+	endfunction
+endif
