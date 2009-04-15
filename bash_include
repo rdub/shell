@@ -1,6 +1,9 @@
 # environment variables
 . ~/.shell/environment
 
+# color definitions
+. ~/.shell/colors
+
 #aliases
 . ~/.shell/aliases
 
