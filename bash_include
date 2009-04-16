@@ -10,9 +10,6 @@
 # git functions
 . ~/.shell/git_utils
 
-# setup git
-git_setup
-
 # e environment manager
 if [ -d ~/.e ]; then
 	eval "$(~/.e/e.py init)"
