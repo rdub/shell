@@ -291,3 +291,5 @@ if !exists("*ReadEEnv")
 		endfor
 	endfunction
 endif
+
+call ReadEEnv()
