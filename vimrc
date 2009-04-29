@@ -22,7 +22,7 @@ set showmode
 set showcmd             " show current uncompleted command
 set wildmode=full
 set ls=2                " Show the name of buffers
-set foldmethod=indent
+set foldmethod=syntax
 set foldlevel=1000
 set laststatus=2
 set guioptions-=T
@@ -270,7 +270,6 @@ au BufRead,BufNewFile *.tex set tw=80
 autocmd BufNewFile,BufRead *.txt set tw=78
 
 set background=dark     "awesome for terminals with crappy colors (putty!)
-set foldmethod=manual   "enable code folding
 
 "colorscheme evening
 
