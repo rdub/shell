@@ -1,7 +1,8 @@
-# Environment Variables
-export EDITOR="nfgvim"
-export GIT_EDITOR="nfgvim"
+# Environment Variables:q
+export EDITOR="vim"
+export GIT_EDITOR="vim"
 export CVS_RSH=ssh
 export SVN_EDITOR=/usr/bin/vim
-export PATH="${HOME}/bin:${PATH}:/usr/local/git/bin"
-
+export PATH="${HOME}/bin:${PATH}:/usr/local/bin"
+export P4EDITOR=$EDITOR
+export P4DIFF="diff -u"

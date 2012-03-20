@@ -33,7 +33,7 @@ set autowrite
 set report=0		    " Report all changed lines
 set history=50		    " keep 50 lines of command line history
 set pastetoggle=<F12>
-
+set smartcase
 
 " *********
 " MODELINES

@@ -1,0 +1,32 @@
+p4patch () {
+	if p4 change -o $1 | grep -E '^Status:.*pending' > /dev/null; then
+		#echo "Pending Changelist: ${1}" > CL${1}.patch
+		#echo >> CL${1}.patch
+		p4 describe $1 > CL${1}.patch
+		p4 opened -c $1 | awk 'BEGIN {FS="#";} {print $1;}' | while read dfile; do
+			P4DIFF="diff -up" p4 diff "$dfile" | awk 'BEGIN { p = 0; }
+				/^====.*====$/ {
+					sub("==== //", "--- a/");
+					sub("#.*$", "");
+					print $0;
+					sub("--- a", "+++ b");
+				}
+				/^---/,/^\+\+\+/ { next; }
+				{ print $0; }
+				' >> CL${1}.patch
+		done
+	else
+		p4 describe -s $1 > CL${1}.patch
+		p4 describe -du -db $1 | awk 'BEGIN { p = 0; }
+			/^====/ {
+				sub("==== //", "--- a/");
+				sub("#.*$", "");
+				print $0;
+				sub("--- a", "+++ b");
+			}
+			{ if(p) print $0; }
+			/^Differences \.\.\./ { p = 1; }' >> CL${1}.patch
+	fi
+	echo "CL${1}.patch"
+}
+

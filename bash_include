@@ -10,6 +10,9 @@
 # git functions
 . ~/.shell/git_utils
 
+# p4 functions
+. ~/.shell/p4_utils
+
 # e environment manager
 if [ -d ~/.e ]; then
 	eval "$(~/.e/e.py init)"
