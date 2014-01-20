@@ -9,7 +9,7 @@ set guioptions-=T
 set guicursor+=a:blinkon0
 
 " font
-set guifont=Monaco:h13
+set guifont=Monaco:h10
 " set nomacatsui
 
 "   remove all default menus

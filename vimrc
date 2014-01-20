@@ -22,7 +22,7 @@ set showmode
 set showcmd             " show current uncompleted command
 set wildmode=full
 set ls=2                " Show the name of buffers
-set foldmethod=indent
+set foldmethod=syntax
 set foldlevel=1000
 set laststatus=2
 set guioptions-=T
@@ -33,7 +33,7 @@ set autowrite
 set report=0		    " Report all changed lines
 set history=50		    " keep 50 lines of command line history
 set pastetoggle=<F12>
-
+set smartcase
 
 " *********
 " MODELINES
@@ -270,7 +270,6 @@ au BufRead,BufNewFile *.tex set tw=80
 autocmd BufNewFile,BufRead *.txt set tw=78
 
 set background=dark     "awesome for terminals with crappy colors (putty!)
-set foldmethod=manual   "enable code folding
 
 "colorscheme evening
 
@@ -291,3 +290,5 @@ if !exists("*ReadEEnv")
 		endfor
 	endfunction
 endif
+
+call ReadEEnv()
