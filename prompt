@@ -1,5 +1,5 @@
 # prompt
 
 # Prints E project name, git branch name, and a frown after every failed command
-export PS1="\[\033[01;32m\]\u@\h(\$EPROJECT) \$(show_git_branch) \[\033[01;36m\]\w \`if [ \$? != 0 ]; then echo -e '\[\e[01;31m\]:('; fi\`\[\033[01;34m\] \$ \[\033[00m\]"
+export PS1="\[\033[01;32m\]\u@\h \$(show_git_branch) \[\033[01;36m\]\w \`if [ \$? != 0 ]; then echo -e '\[\e[01;31m\]:('; fi\`\[\033[01;34m\] \$ \[\033[00m\]"
 
