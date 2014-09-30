@@ -36,3 +36,12 @@ EOF
 function show_git_branch {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
+
+function github_reviews {
+	PRJNAME=$(git config --get remote.origin.url | sed -e 's/\.git$//' -e 's/^.*://')
+	if [ -z "$PRJNAME" ]; then
+		return 1
+	fi
+	PRJURLBASE="https://github.com/${PRJNAME}/commit"
+	git log --reverse --grep='Reviewed.*TBD' | sed "s;\([a-f0-9]\{40\}\);${PRJURLBASE}/\1;"
+}
