@@ -26,3 +26,6 @@ fi
 
 # history control
 . ~/.shell/history
+
+# Raise the open file limit to 1024
+ulimit -S -n 1024

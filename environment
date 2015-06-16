@@ -1,6 +1,6 @@
 # Environment Variables
-export EDITOR="/usr/bin/vim"
-export GIT_EDITOR="/usr/bin/vim"
+export EDITOR="vim"
+export GIT_EDITOR="vim"
 export CVS_RSH=ssh
 export SVN_EDITOR=/usr/bin/vim
 export PATH="${HOME}/bin:${PATH}:/usr/local/bin"

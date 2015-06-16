@@ -30,7 +30,6 @@ function git_setup {
 	set textfont {Monaco 10}
 	set uifont {Monaco 10}
 EOF
-
 }
 
 function show_git_branch {
@@ -38,10 +37,19 @@ function show_git_branch {
 }
 
 function github_reviews {
-	PRJNAME=$(git config --get remote.origin.url | sed -e 's/\.git$//' -e 's/^.*://')
+	PRJNAME=$(git config --get remote.origin.url | sed -e 's/\.git$//' -e 's/^.*://' -e 's;^\/\/github\.com\/;;')
 	if [ -z "$PRJNAME" ]; then
 		return 1
 	fi
 	PRJURLBASE="https://github.com/${PRJNAME}/commit"
 	git log --reverse --grep='Reviewed.*TBD' | sed "s;\([a-f0-9]\{40\}\);${PRJURLBASE}/\1;"
+}
+
+function git_kamama {
+	git config user.email "rdub@kamama.com"
+}
+
+function kamama_git_init {
+	git init
+	git_kamama
 }
