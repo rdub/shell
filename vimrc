@@ -292,3 +292,6 @@ if !exists("*ReadEEnv")
 endif
 
 call ReadEEnv()
+
+map <C-K> :pyf /usr/local/share/clang/clang-format.py -style=~/oculus/visionlib/.clang-format
+imap <C-K> <c-o> :pyf /usr/local/share/clang/clang-format.py -style=~/oculus/visionlib/.clang-format
