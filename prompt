@@ -1,6 +1,5 @@
 # prompt
 
-
 # Get awesome SCM prompt support for git and hg here:
 # https://github.com/wavesoftware/scmprompt
 if [ -d scmprompt ]; then
