@@ -2,8 +2,10 @@
 
 # Get awesome SCM prompt support for git and hg here:
 # https://github.com/wavesoftware/scmprompt
-if [ -d scmprompt ]; then
-	source scmprompt/scmprompt.sh
+SELF=$(dirname ${BASH_SOURCE[0]})
+
+if [ -d ${SELF}/scmprompt ]; then
+	source ${SELF}/scmprompt/scmprompt.sh
 elif [ -f /opt/facebook/hg/share/scm-prompt.sh ]; then
 	source /opt/facebook/hg/share/scm-prompt.sh
 
