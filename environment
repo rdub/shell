@@ -7,3 +7,4 @@ export PATH="${HOME}/bin:/Applications/CMake.app/Contents/bin:/usr/local/bin:${P
 export P4EDITOR=$EDITOR
 export P4DIFF="diff -u"
 export Qt5_DIR=~/Qt/Qt5.7.1/5.7/clang_64/lib/cmake/Qt5
+export ANDROID_NDK_HOME=/opt/android_ndk/android-ndk-r14b
