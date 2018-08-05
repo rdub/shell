@@ -14,7 +14,7 @@ EOF
 
 echo "Updating packetfilter rules (enter your admin passwd)"
 sudo cp $tmpfile /etc/pf.anchors/block-facebook
-if grep -qv 'anchor "block-facebook"' "$tmpfile"; then
+if ! grep -q 'anchor "block-facebook"' /etc/pf.conf; then
 echo "Setting up packet filter inclusion (enter your admin passwd)"
 sudo bash -c "cat >> /etc/pf.conf" << 'EOF'
 
@@ -25,8 +25,6 @@ fi
 
 echo "reloading packetfilter rules"
 sudo pfctl -d
-echo "enabling packetfiltering"
-sudo pfctl -f /etc/pf.conf
-sudo pfctl -e
+sudo pfctl -ef /etc/pf.conf
 echo "new rules:"
 sudo pfctl -a block-facebook -s rules
