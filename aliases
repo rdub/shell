@@ -8,10 +8,9 @@ alias ducks="du -cks * | sort -nr | head -n 10"
 alias dfuit="xcrun -sdk iphoneos.internal dfuit"
 alias gits="git svn"
 alias mplayer="/Applications/MPlayer\ OSX\ Extended.app/Contents/Resources/Binaries/mpextended.mpBinaries/Contents/MacOS/mplayer"
-alias dubsrv="mosh rdub.sb.facebook.com"
-eval "$(thefuck --alias)"
-
-# prefer attach over create
-alias tm="tmux new -A -s dubmux"
+alias fuck='eval $(thefuck $(fc -ln -1))'
 alias vpn="sshuttle -r rdub@genbukan.ddns.net 0/0"
-alias rfmt="(cd $(git rev-parse --show-toplevel) && git diff -U0 HEAD | /usr/local/share/clang/clang-format-diff.py -p 1 -i -style=.clang-format)"
+alias openports='lsof -n -i | awk '"'"'{ print $1,$9; }'"'"' | sort -u'
+if [[ -x `which thefuck` ]]; then
+	eval "$(thefuck --alias)"
+fi

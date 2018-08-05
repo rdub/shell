@@ -29,3 +29,8 @@ fi
 
 # Raise the open file limit to 1024
 ulimit -S -n 1024
+
+# Bash Completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+	. $(brew --prefix)/etc/bash_completion
+fi
