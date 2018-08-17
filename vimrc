@@ -14,9 +14,9 @@ set smartindent
 set term=xterm-color    " Makes mouse work in Eterm
 set ttyfast
 set background=light
-set tabstop=2           " TAB == 4 spaces
-set shiftwidth=2        " TAB == 4 spaces
-set softtabstop=2       " TAB == 4 spaces
+set tabstop=4           " TAB == 4 spaces
+set shiftwidth=4        " TAB == 4 spaces
+set softtabstop=4       " TAB == 4 spaces
 set showmatch		    " show matching braces
 set showmode
 set showcmd             " show current uncompleted command
@@ -34,7 +34,6 @@ set report=0		    " Report all changed lines
 set history=50		    " keep 50 lines of command line history
 set pastetoggle=<F12>
 set smartcase
-set expandtab
 
 " *********
 " MODELINES
@@ -208,10 +207,10 @@ if has("autocmd")
         \ set ts=4 sw=4 noexpandtab tw=0
 
 	au FileType	html,css
-		\   set tabstop=2 shiftwidth=2
+		\   set tabstop=4 shiftwidth=4
 
    au FileType     php
-      \   set tabstop=2 shiftwidth=2
+      \   set tabstop=4 shiftwidth=4
 		\ | set expandtab
 		\ | call C_maps()
 
@@ -244,10 +243,9 @@ if has("autocmd")
 
 	" C, C++, JavaScript, Java
 	au FileType	c,cpp,javascript,java
-		\   set tabstop=2
-		\ | set shiftwidth=2
-    \ | set softtabstop=2
-    \ | set expandtab
+		\   set tabstop=4
+		\ | set shiftwidth=4
+        \ | set softtabstop=4
 		\ | call C_maps()
 
 
