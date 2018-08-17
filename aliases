@@ -8,9 +8,13 @@ alias ducks="du -cks * | sort -nr | head -n 10"
 alias dfuit="xcrun -sdk iphoneos.internal dfuit"
 alias gits="git svn"
 alias mplayer="/Applications/MPlayer\ OSX\ Extended.app/Contents/Resources/Binaries/mpextended.mpBinaries/Contents/MacOS/mplayer"
-alias fuck='eval $(thefuck $(fc -ln -1))'
 alias vpn="sshuttle -r rdub@genbukan.ddns.net 0/0"
 alias openports='lsof -n -i | awk '"'"'{ print $1,$9; }'"'"' | sort -u'
 if [[ -x `which thefuck` ]]; then
 	eval "$(thefuck --alias)"
 fi
+
+# prefer attach over create
+alias tm="tmux new -A -s dubmux"
+alias hgup="hg pull && hg rebase -d master"
+alias hglog="hg log --template \"* \\x1B[31m{node|short}\\x1b[38;5;46m - {desc|firstline} \\x1b[38;5;29m({date|age}) \\x1b[38;5;12m<{author|person}>\\x1b[0m\n\""

@@ -3,4 +3,4 @@ export EDITOR="vim"
 export GIT_EDITOR="vim"
 export CVS_RSH=ssh
 export SVN_EDITOR=/usr/bin/vim
-export PATH="${HOME}/bin:${PATH}:/usr/local/bin:/usr/local/sbin:/opt/local/bin"
+export PATH="${HOME}/bin:/usr/local/bin:/usr/local/sbin:/opt/local/bin:${PATH}"

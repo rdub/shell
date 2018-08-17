@@ -4,24 +4,16 @@
 # https://github.com/wavesoftware/scmprompt
 SELF=$(dirname ${BASH_SOURCE[0]})
 
-if [ -d ${SELF}/scmprompt ]; then
-	source ${SELF}/scmprompt/scmprompt.sh
-elif [ -f /opt/facebook/hg/share/scm-prompt.sh ]; then
-	source /opt/facebook/hg/share/scm-prompt.sh
+PROMPT_COMMAND=__prompt_command
 
-	PROMPT_COMMAND=__prompt_command
+__prompt_command() {
+  local EXIT="$?"
 
-	__prompt_command() {
-		local EXIT="$?"
+  # Prints E project name, git branch name, and a frown after every failed command
+  PS1="\[\033[01;32m\]\u@\h \[\033[01;36m\]\w "
 
-		# Prints E project name, git branch name, and a frown after every failed command
-		PS1="\[\033[01;32m\]\u@\h\$(_scm_prompt) \[\033[01;36m\]\w "
-
-		if [ $EXIT != 0 ]; then
-			PS1+="\[\e[01;31m\]:("
-		fi
-		PS1+="\[\033[01;34m\] \$ \[\033[00m\]"
-	}
-
-fi
-
+  if [ $EXIT != 0 ]; then
+    PS1+="\[\e[01;31m\]:("
+  fi
+  PS1+="\[\033[01;34m\] \$ \[\033[00m\]"
+}
