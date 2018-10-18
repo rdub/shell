@@ -10,7 +10,7 @@ __prompt_command() {
   local EXIT="$?"
 
   # Prints E project name, git branch name, and a frown after every failed command
-  PS1="\[\033[01;32m\]\u@\h \[\033[01;36m\]\w "
+  PS1="\[\033[01;32m\]\u@\h [$(~/.shell/sober.py)] \[\033[01;36m\]\w "
 
   if [ $EXIT != 0 ]; then
     PS1+="\[\e[01;31m\]:("
